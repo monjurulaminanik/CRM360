@@ -1,0 +1,1183 @@
+{
+  "users": [
+    {
+      "_id": "6a077f67b28c9045e705cf02",
+      "name": "Monjurul Amin Anik",
+      "email": "anik@dawatit.com",
+      "password": "$2a$12$fYhZiH.T0hPvWDt8ngwI3O9roICylMXaVs5xDRZ2VBVtcEqUR/wLW",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2026-05-24T12:10:18.609Z",
+      "updatedAt": "2026-05-29T13:53:19.834Z",
+      "lastLogin": 1780059617157,
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "6a077f67b28c9045e705cf0a",
+      "name": "Global Superadmin",
+      "email": "superadmin@d360.com",
+      "password": "$2a$12$ejW8P5sZB492Cbo24Qw0FerGrFNtlnOZ1A2q8szeMMFdHT3XX6OR.",
+      "role": "superadmin",
+      "isActive": true,
+      "createdAt": "2026-05-27T20:27:48.202Z",
+      "updatedAt": "2026-05-29T13:53:19.834Z",
+      "lastLogin": 1780057149255
+    },
+    {
+      "_id": "6a077f67b28c9045e705cf0b",
+      "name": "John Hernandez",
+      "email": "client@d360.com",
+      "password": "$2a$12$ukgzZAB6x0xEsUDdyyM4Oeq8sq8qs1H0SRPx.9FwYBCueJFxAGjvq",
+      "role": "client",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "isActive": true,
+      "createdAt": "2026-05-27T20:27:48.202Z",
+      "updatedAt": "2026-05-29T13:53:19.834Z",
+      "lastLogin": 1780057755630
+    },
+    {
+      "_id": "6a077f67b28c9045e705cf0c",
+      "name": "Monjurul Amin",
+      "email": "employee@d360.com",
+      "password": "$2a$12$q6FLcLpDuUwS3X.z/Q4u.OA/ZFMqiNd4oYqgzxhM2TiGqIP6uAzO.",
+      "role": "employee",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "isActive": true,
+      "createdAt": "2026-05-27T20:27:48.202Z",
+      "updatedAt": "2026-05-29T13:53:19.834Z",
+      "lastLogin": 1779914522402
+    }
+  ],
+  "leads": [
+    {
+      "name": "John Hernandez",
+      "email": "john.hernandez@pixeltech.com",
+      "phone": "+14257496903",
+      "company": "PixelTech",
+      "website": "www.pixeltech.com",
+      "status": "new",
+      "source": "website",
+      "priority": "low",
+      "interestedServices": [
+        "seo",
+        "email_marketing",
+        "content_marketing"
+      ],
+      "budget": {
+        "min": 500,
+        "max": 1000,
+        "currency": "USD"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 500 and 1000. Contacted via email.",
+      "tags": [
+        "newsletter-signup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": true,
+      "createdAt": "2026-05-27T14:25:49.152Z",
+      "updatedAt": "2026-05-29T13:25:23.570Z",
+      "_id": "1wbl3z3rjk07sttm",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "convertedAt": 1780059794601,
+      "clientId": "rl59ri8nlkxhvknh"
+    },
+    {
+      "name": "Emily Gonzalez",
+      "email": "emily.gonzalez@cloudsphere.org",
+      "phone": "+8809122816380",
+      "company": "CloudSphere",
+      "website": "www.cloudsphere.com",
+      "status": "won",
+      "source": "other",
+      "priority": "low",
+      "interestedServices": [
+        "web_design",
+        "ppc",
+        "email_marketing"
+      ],
+      "budget": {
+        "min": 500,
+        "max": 3000,
+        "currency": "BDT"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 500 and 3000. Contacted via phone.",
+      "tags": [
+        "enterprise",
+        "newsletter-signup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:25:35.457Z",
+      "_id": "e2m9ik43k7it4632",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Karen Lopez",
+      "email": "karen.lopez@zenixglobal.co",
+      "phone": "+16741023135",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "status": "qualified",
+      "source": "social_media",
+      "priority": "low",
+      "interestedServices": [
+        "email_marketing",
+        "branding",
+        "content_marketing"
+      ],
+      "budget": {
+        "min": 2500,
+        "max": 7500,
+        "currency": "BDT"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 2500 and 7500. Contacted via email.",
+      "tags": [
+        "new-startup",
+        "urgent"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:25:34.826Z",
+      "_id": "qfgd8bfrdtticeek",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Margaret Smith",
+      "email": "margaret.smith@deltaconsulting.co",
+      "phone": "+925831183532",
+      "company": "Delta Consulting",
+      "website": "www.deltaconsulting.com",
+      "status": "proposal",
+      "source": "referral",
+      "priority": "medium",
+      "interestedServices": [
+        "branding"
+      ],
+      "budget": {
+        "min": 5000,
+        "max": 7500,
+        "currency": "USD"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 5000 and 7500. Contacted via email.",
+      "tags": [
+        "high-budget",
+        "new-startup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:35:31.892Z",
+      "_id": "32ioiathqh2s3kmf",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "James Anderson",
+      "email": "james.anderson@zenixglobal.co",
+      "phone": "+929731792149",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "status": "lost",
+      "source": "referral",
+      "priority": "low",
+      "interestedServices": [
+        "video_marketing",
+        "ppc"
+      ],
+      "budget": {
+        "min": 5000,
+        "max": 10000,
+        "currency": "BDT"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 5000 and 10000. Contacted via phone.",
+      "tags": [
+        "new-startup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:35:56.001Z",
+      "_id": "eoriglpeza9pmjaw",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Linda Garcia",
+      "email": "linda.garcia@horizonit.net",
+      "phone": "+13314069125",
+      "company": "Horizon IT",
+      "website": "www.horizonit.com",
+      "status": "contacted",
+      "source": "social_media",
+      "priority": "low",
+      "interestedServices": [
+        "content_marketing",
+        "web_design",
+        "branding"
+      ],
+      "budget": {
+        "min": 10000,
+        "max": 11000,
+        "currency": "EUR"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 10000 and 11000. Contacted via phone.",
+      "tags": [
+        "urgent",
+        "high-budget"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-27T14:25:49.153Z",
+      "_id": "rpzu9m1ltw3rk18e",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Jessica Davis",
+      "email": "jessica.davis@horizonit.com",
+      "phone": "+923795051146",
+      "company": "Horizon IT",
+      "website": "www.horizonit.com",
+      "status": "lost",
+      "source": "social_media",
+      "priority": "low",
+      "interestedServices": [
+        "content_marketing",
+        "web_design"
+      ],
+      "budget": {
+        "min": 500,
+        "max": 1500,
+        "currency": "USD"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 500 and 1500. Contacted via email.",
+      "tags": [
+        "new-startup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:36:01.459Z",
+      "_id": "k32so1caweq5l1ae",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@zenixglobal.com",
+      "phone": "+8807184404215",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "status": "won",
+      "source": "whatsapp",
+      "priority": "low",
+      "interestedServices": [
+        "email_marketing",
+        "ppc"
+      ],
+      "budget": {
+        "min": 1000,
+        "max": 2000,
+        "currency": "BDT"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 1000 and 2000. Contacted via email.",
+      "tags": [
+        "newsletter-signup"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": true,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:26:03.564Z",
+      "_id": "7mrw4btvp0po9vpv",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "convertedAt": 1780061797973,
+      "clientId": "jwhbv46vfzizqshf"
+    },
+    {
+      "name": "Emily Williams",
+      "email": "emily.williams@zenixglobal.org",
+      "phone": "+924465875668",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "status": "new",
+      "source": "social_media",
+      "priority": "low",
+      "interestedServices": [
+        "web_design"
+      ],
+      "budget": {
+        "min": 10000,
+        "max": 15000,
+        "currency": "BDT"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 10000 and 15000. Contacted via phone.",
+      "tags": [
+        "enterprise",
+        "urgent"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:36:17.603Z",
+      "_id": "tosiy7oi4en5zpha",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "John Martinez",
+      "email": "john.martinez@zenixglobal.org",
+      "phone": "+443501220909",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "status": "negotiation",
+      "source": "cold_call",
+      "priority": "low",
+      "interestedServices": [
+        "seo",
+        "email_marketing"
+      ],
+      "budget": {
+        "min": 10000,
+        "max": 11000,
+        "currency": "EUR"
+      },
+      "notes": "Interested in custom solutions. Budget ranges between 10000 and 11000. Contacted via phone.",
+      "tags": [
+        "urgent"
+      ],
+      "assignedTo": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedToClient": false,
+      "createdAt": "2026-05-27T14:25:49.153Z",
+      "updatedAt": "2026-05-29T13:36:08.773Z",
+      "_id": "yv96osnkxzli6put",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "clients": [
+    {
+      "_id": "orhvb0mibkiwc1fk",
+      "createdAt": "2026-05-27T14:28:09.424Z",
+      "updatedAt": "2026-05-29T12:29:00.675Z",
+      "name": "John Hernandez",
+      "email": "client@d360.com",
+      "phone": "+14257496903",
+      "whatsappNumber": "+14257496903",
+      "company": "PixelTech",
+      "website": "www.pixeltech.com",
+      "notes": "Interested in custom solutions. Budget ranges between 500 and 1000. Contacted via email.",
+      "tags": [
+        "newsletter-signup"
+      ],
+      "accountManager": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "convertedFromLead": "1wbl3z3rjk07sttm",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "portalAccess": true,
+      "portalMagicToken": "0abf5ac8f8dc28c71d574012c251c76e163089421bea938975d01d8cd5f8d9e2"
+    },
+    {
+      "_id": "7u9430uco8kjmwly",
+      "createdAt": "2026-05-27T14:46:04.524Z",
+      "updatedAt": "2026-05-27T14:46:04.524Z",
+      "name": "Monjurul Amin Anik",
+      "email": "anik.witinstitute@gmail.com",
+      "whatsappNumber": "01635328608",
+      "company": "Dhaka IT",
+      "website": "https://imanik.com",
+      "businessType": "startup",
+      "tier": "premium",
+      "status": "active",
+      "notes": "Jani nah vai",
+      "renewalDate": "2026-05-27",
+      "healthScore": 75,
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "rl59ri8nlkxhvknh",
+      "createdAt": "2026-05-29T13:03:14.600Z",
+      "updatedAt": "2026-05-29T13:03:14.600Z",
+      "name": "John Hernandez",
+      "email": "client@d360.com",
+      "phone": "+14257496903",
+      "whatsappNumber": "+14257496903",
+      "company": "PixelTech",
+      "website": "www.pixeltech.com",
+      "notes": "Interested in custom solutions. Budget ranges between 500 and 1000. Contacted via email.",
+      "tags": [
+        "newsletter-signup"
+      ],
+      "accountManager": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "convertedFromLead": "1wbl3z3rjk07sttm"
+    },
+    {
+      "_id": "jwhbv46vfzizqshf",
+      "createdAt": "2026-05-29T13:36:37.972Z",
+      "updatedAt": "2026-05-29T13:36:37.972Z",
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@zenixglobal.com",
+      "phone": "+8807184404215",
+      "whatsappNumber": "+8807184404215",
+      "company": "Zenix Global",
+      "website": "www.zenixglobal.com",
+      "notes": "Interested in custom solutions. Budget ranges between 1000 and 2000. Contacted via email.",
+      "tags": [
+        "newsletter-signup"
+      ],
+      "accountManager": "6a077f67b28c9045e705cf02",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "convertedFromLead": "7mrw4btvp0po9vpv"
+    }
+  ],
+  "campaigns": [],
+  "whatsappmessages": [
+    {
+      "_id": "8r5vldtw115yb3w0",
+      "createdAt": "2026-05-27T14:33:59.109Z",
+      "updatedAt": "2026-05-27T14:33:59.109Z",
+      "waMessageId": "offline_toffa2nx0k",
+      "conversationId": "+14257496903",
+      "from": "your_phone_number_id",
+      "to": "+14257496903",
+      "direction": "outbound",
+      "type": "text",
+      "content": {
+        "text": "hello there"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:33:59.108Z",
+      "deliveredAt": "2026-05-27T14:33:59.108Z",
+      "readAt": "2026-05-27T14:33:59.108Z",
+      "leadId": "orhvb0mibkiwc1fk",
+      "clientId": null,
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "lvgt045onln8hnux",
+      "createdAt": "2026-05-27T14:44:46.255Z",
+      "updatedAt": "2026-05-27T14:44:46.255Z",
+      "waMessageId": "offline_k2ne6zpvmd",
+      "conversationId": "+14257496903",
+      "from": "your_phone_number_id",
+      "to": "+14257496903",
+      "direction": "outbound",
+      "type": "template",
+      "content": {
+        "templateName": "onboarding_welcome"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:44:46.255Z",
+      "isTemplate": true,
+      "templateName": "onboarding_welcome",
+      "leadId": "1wbl3z3rjk07sttm",
+      "clientId": "orhvb0mibkiwc1fk",
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "91sa7objyy9wq0l8",
+      "createdAt": "2026-05-27T14:46:34.726Z",
+      "updatedAt": "2026-05-27T14:46:34.726Z",
+      "waMessageId": "offline_x8gu8ahrgq",
+      "conversationId": "01635328608",
+      "from": "your_phone_number_id",
+      "to": "01635328608",
+      "direction": "outbound",
+      "type": "text",
+      "content": {
+        "text": "hello there bro"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:46:34.725Z",
+      "deliveredAt": "2026-05-27T14:46:34.725Z",
+      "readAt": "2026-05-27T14:46:34.725Z",
+      "leadId": "7u9430uco8kjmwly",
+      "clientId": null,
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "hl4q8emrvo5j04tg",
+      "createdAt": "2026-05-27T14:50:40.880Z",
+      "updatedAt": "2026-05-27T14:50:40.880Z",
+      "waMessageId": "offline_l9tan1gwuw",
+      "conversationId": "01635328608",
+      "from": "your_phone_number_id",
+      "to": "01635328608",
+      "direction": "outbound",
+      "type": "template",
+      "content": {
+        "templateName": "meeting_invite"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:50:40.880Z",
+      "isTemplate": true,
+      "templateName": "meeting_invite",
+      "leadId": null,
+      "clientId": "7u9430uco8kjmwly",
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "12hwivb9usruf7dv",
+      "createdAt": "2026-05-27T14:50:40.895Z",
+      "updatedAt": "2026-05-27T14:50:40.896Z",
+      "waMessageId": "offline_nj80utnu0y",
+      "conversationId": "01635328608",
+      "from": "your_phone_number_id",
+      "to": "01635328608",
+      "direction": "outbound",
+      "type": "template",
+      "content": {
+        "templateName": "meeting_invite"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:50:40.895Z",
+      "isTemplate": true,
+      "templateName": "meeting_invite",
+      "leadId": null,
+      "clientId": "7u9430uco8kjmwly",
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "s7nhuloj0315thgw",
+      "createdAt": "2026-05-27T14:50:40.977Z",
+      "updatedAt": "2026-05-27T14:50:40.977Z",
+      "waMessageId": "offline_5h5slagi0r",
+      "conversationId": "01635328608",
+      "from": "your_phone_number_id",
+      "to": "01635328608",
+      "direction": "outbound",
+      "type": "template",
+      "content": {
+        "templateName": "meeting_invite"
+      },
+      "status": "read",
+      "sentAt": "2026-05-27T14:50:40.977Z",
+      "isTemplate": true,
+      "templateName": "meeting_invite",
+      "leadId": null,
+      "clientId": "7u9430uco8kjmwly",
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "cps8iu83krbgmbg4",
+      "createdAt": "2026-05-29T13:38:02.370Z",
+      "updatedAt": "2026-05-29T13:38:02.370Z",
+      "waMessageId": "offline_zs1tky66e9",
+      "conversationId": "8809122816380",
+      "from": "your_phone_number_id",
+      "to": "8809122816380",
+      "direction": "outbound",
+      "type": "text",
+      "content": {
+        "text": "Hi Emily, welcome to Dawat IT! We are absolutely thrilled to partner with you. Let's make something extraordinary!"
+      },
+      "status": "read",
+      "sentAt": "2026-05-29T13:38:02.370Z",
+      "deliveredAt": "2026-05-29T13:38:02.370Z",
+      "readAt": "2026-05-29T13:38:02.370Z",
+      "leadId": "e2m9ik43k7it4632",
+      "clientId": null,
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "ge2rtdqznsoyhvld",
+      "createdAt": "2026-05-29T13:38:04.395Z",
+      "updatedAt": "2026-05-29T13:38:04.395Z",
+      "waMessageId": "offline_wydbns1wjh",
+      "conversationId": "8809122816380",
+      "from": "8809122816380",
+      "to": "your_phone_number_id",
+      "direction": "inbound",
+      "type": "text",
+      "content": {
+        "text": "Yes, that looks perfect. Please send over the contract."
+      },
+      "status": "unread",
+      "sentAt": "2026-05-29T13:38:04.395Z",
+      "leadId": "e2m9ik43k7it4632",
+      "clientId": null,
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "v9g8c9e054ppxg3n",
+      "createdAt": "2026-05-29T13:38:16.478Z",
+      "updatedAt": "2026-05-29T13:38:16.478Z",
+      "waMessageId": "offline_cdkx0tors2",
+      "conversationId": "8809122816380",
+      "from": "your_phone_number_id",
+      "to": "8809122816380",
+      "direction": "outbound",
+      "type": "text",
+      "content": {
+        "text": "Hi Emily, just following up on the growth plan proposal we shared yesterday. We're happy to adjust the details to fit your targets."
+      },
+      "status": "read",
+      "sentAt": "2026-05-29T13:38:16.477Z",
+      "deliveredAt": "2026-05-29T13:38:16.477Z",
+      "readAt": "2026-05-29T13:38:16.477Z",
+      "leadId": "e2m9ik43k7it4632",
+      "clientId": null,
+      "sentBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "i4fs4qqcq4nyiixl",
+      "createdAt": "2026-05-29T13:38:18.488Z",
+      "updatedAt": "2026-05-29T13:38:18.488Z",
+      "waMessageId": "offline_oar9s3f1z9",
+      "conversationId": "8809122816380",
+      "from": "8809122816380",
+      "to": "your_phone_number_id",
+      "direction": "inbound",
+      "type": "text",
+      "content": {
+        "text": "Hey there! Thanks for reaching out. How can I help you?"
+      },
+      "status": "unread",
+      "sentAt": "2026-05-29T13:38:18.487Z",
+      "leadId": "e2m9ik43k7it4632",
+      "clientId": null,
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "clientnotes": [],
+  "leadnotes": [
+    {
+      "_id": "gp3ucojk77zh8inh",
+      "createdAt": "2026-05-27T16:58:19.385Z",
+      "updatedAt": "2026-05-27T16:58:19.385Z",
+      "leadId": "1wbl3z3rjk07sttm",
+      "type": "whatsapp",
+      "text": "hello hoise thats it",
+      "metadata": {},
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "employees": [
+    {
+      "_id": "cnu21hvlozjv4qsg",
+      "createdAt": "2026-05-27T17:37:31.079Z",
+      "updatedAt": "2026-05-27T17:37:31.079Z",
+      "firstName": "Monjurul ",
+      "lastName": "Amin",
+      "email": "anik.witinstitute@gmail.com",
+      "phone": "01635328606",
+      "gender": "male",
+      "dateOfBirth": "1998-05-15",
+      "presentAddress": "Mirpur-10, Dhaka",
+      "emergencyContactName": "Rahima Begum",
+      "emergencyContactPhone": "+8801921682064",
+      "emergencyContactRelation": "Mother",
+      "joiningDate": "2026-05-01",
+      "employmentType": "full-time",
+      "workLocation": "office",
+      "department": "f49m21jalc8zbkcf",
+      "shift": "bf1ms246xwi4hb7h",
+      "employeeId": "DIT-EMP-001",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Marketing",
+      "code": "MKTG",
+      "description": "Brand management and marketing campaigns.",
+      "status": "active",
+      "_id": "f49m21jalc8zbkcf",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Development",
+      "code": "DEV",
+      "description": "Software engineering and product development.",
+      "status": "active",
+      "_id": "s2dxratqzadjh7qn",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Operations",
+      "code": "OPS",
+      "description": "Operational workflows and business scaling.",
+      "status": "active",
+      "_id": "wn2sesifp0pvqf04",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "pb4stm83t7zg3wfk",
+      "createdAt": "2026-05-27T17:36:33.450Z",
+      "updatedAt": "2026-05-27T17:36:33.451Z",
+      "name": "Marketing",
+      "code": "MAR",
+      "description": "A Team That Will help Us to Run Every Business",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "designations": [
+    {
+      "title": "Junior Software Engineer",
+      "level": "junior",
+      "description": "Entry level software engineering role.",
+      "_id": "8sma3atjfeh6o7o5",
+      "department": "s2dxratqzadjh7qn",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "title": "Mid Web Developer",
+      "level": "mid",
+      "description": "Experienced full stack developer.",
+      "_id": "b7ovb45gfqzbmspx",
+      "department": "s2dxratqzadjh7qn",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "title": "Senior SEO Strategist",
+      "level": "senior",
+      "description": "Leads search engine marketing & optimization.",
+      "_id": "sbzdpx636z9u7m05",
+      "department": "f49m21jalc8zbkcf",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "title": "Tech Lead",
+      "level": "lead",
+      "description": "Leads software delivery and system engineering teams.",
+      "_id": "rmkgmwljqlzsdtwk",
+      "department": "f49m21jalc8zbkcf",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "title": "Marketing Manager",
+      "level": "manager",
+      "description": "Manages marketing pipeline and business development.",
+      "_id": "nrst3yu5qx4n4xsr",
+      "department": "f49m21jalc8zbkcf",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "attendances": [],
+  "leavetypes": [
+    {
+      "name": "Casual Leave",
+      "code": "CL",
+      "color": "#3B82F6",
+      "daysAllowedPerYear": 10,
+      "isPaid": true,
+      "carryForward": false,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "66wfv712rgc8y49x",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Sick Leave",
+      "code": "SL",
+      "color": "#EF4444",
+      "daysAllowedPerYear": 14,
+      "isPaid": true,
+      "carryForward": false,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "e8m8te07u7sny83e",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Annual Leave",
+      "code": "AL",
+      "color": "#10B981",
+      "daysAllowedPerYear": 20,
+      "isPaid": true,
+      "carryForward": true,
+      "maxCarryForward": 10,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "ae93g90lhz5njkfw",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Maternity Leave",
+      "code": "ML",
+      "color": "#EC4899",
+      "daysAllowedPerYear": 90,
+      "isPaid": true,
+      "carryForward": false,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "v9xq718o7ndefrqp",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Paternity Leave",
+      "code": "PL",
+      "color": "#8B5CF6",
+      "daysAllowedPerYear": 7,
+      "isPaid": true,
+      "carryForward": false,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "eacocqf2m90kff01",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Unpaid Leave",
+      "code": "UPL",
+      "color": "#6B7280",
+      "daysAllowedPerYear": 365,
+      "isPaid": false,
+      "carryForward": false,
+      "requiresApproval": true,
+      "status": "active",
+      "_id": "jddagbz2hrg7l2h6",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "leaves": [],
+  "leavebalances": [],
+  "holidays": [
+    {
+      "name": "Shaheed Day / Language Martyrs' Day",
+      "date": "2026-02-21T00:00:00.000Z",
+      "type": "national",
+      "description": "International Mother Language Day.",
+      "_id": "i3y1uzujcjg8mob4",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Sheikh Mujibur Rahman Birthday",
+      "date": "2026-03-17T00:00:00.000Z",
+      "type": "national",
+      "description": "Birthday of Father of the Nation.",
+      "_id": "9pjb8zwjmojrpyj9",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Independence Day of Bangladesh",
+      "date": "2026-03-26T00:00:00.000Z",
+      "type": "national",
+      "description": "Declaration of independence.",
+      "_id": "rre62fyfptkw5qmx",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Bengali New Year (Pohela Boishakh)",
+      "date": "2026-04-14T00:00:00.000Z",
+      "type": "religious",
+      "description": "First day of the Bengali calendar.",
+      "_id": "svbtkczm80vtq0xw",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "May Day",
+      "date": "2026-05-01T00:00:00.000Z",
+      "type": "public",
+      "description": "International Workers' Day.",
+      "_id": "an5y177hwb01icpq",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Buddha Purnima",
+      "date": "2026-05-19T00:00:00.000Z",
+      "type": "religious",
+      "description": "Birth of Lord Buddha.",
+      "_id": "p719v1gb4h01sppl",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "National Mourning Day",
+      "date": "2026-08-15T00:00:00.000Z",
+      "type": "national",
+      "description": "Martyrdom anniversary of Sheikh Mujibur Rahman.",
+      "_id": "igg72z5j3rpmoftk",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Victory Day of Bangladesh",
+      "date": "2026-12-16T00:00:00.000Z",
+      "type": "national",
+      "description": "Victory day in the liberation war.",
+      "_id": "t0zecluuxdjgdctr",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Christmas Day",
+      "date": "2026-12-25T00:00:00.000Z",
+      "type": "religious",
+      "description": "Celebration of Christmas.",
+      "_id": "xmdmsyjm7umbyf0a",
+      "createdAt": "2026-05-27T17:21:42.075Z",
+      "updatedAt": "2026-05-27T17:21:42.075Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "shifts": [
+    {
+      "name": "Morning Shift",
+      "startTime": "09:00",
+      "endTime": "18:00",
+      "breakDuration": 60,
+      "lateMarkAfter": 15,
+      "halfDayAfter": 120,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "active",
+      "_id": "bf1ms246xwi4hb7h",
+      "createdAt": "2026-05-27T17:21:42.072Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "name": "Evening Shift",
+      "startTime": "14:00",
+      "endTime": "23:00",
+      "breakDuration": 60,
+      "lateMarkAfter": 15,
+      "halfDayAfter": 120,
+      "workingDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "active",
+      "_id": "a1eeuldl9dn4xlcl",
+      "createdAt": "2026-05-27T17:21:42.074Z",
+      "updatedAt": "2026-05-27T17:21:42.074Z",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "salarystructures": [],
+  "payrolls": [],
+  "appraisals": [],
+  "tenants": [
+    {
+      "_id": "6a077f67b28c9045e705cf00",
+      "name": "Dawat IT",
+      "slug": "dawatit",
+      "subscriptionPlan": "premium",
+      "subscriptionStatus": "active",
+      "expiresAt": "2030-12-31T23:59:59.000Z",
+      "createdAt": "2026-05-27T20:27:46.448Z",
+      "updatedAt": "2026-05-27T20:27:46.448Z"
+    }
+  ],
+  "tasks": [
+    {
+      "_id": "rdjyfg8t2vu8eion",
+      "createdAt": "2026-05-29T08:56:36.813Z",
+      "updatedAt": "2026-05-29T09:36:59.439Z",
+      "title": "Jani Nah",
+      "priority": "medium",
+      "status": "completed",
+      "dueDate": "2026-05-28",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "cpel40zjkp6ntxnq",
+      "createdAt": "2026-05-29T08:56:36.903Z",
+      "updatedAt": "2026-05-29T08:56:36.903Z",
+      "title": "Jani Nah",
+      "priority": "medium",
+      "status": "todo",
+      "dueDate": "2026-05-28",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "a7lltzrfz3975vg6",
+      "createdAt": "2026-05-29T08:56:37.187Z",
+      "updatedAt": "2026-05-29T13:54:53.032Z",
+      "title": "Jani Nah",
+      "priority": "medium",
+      "status": "in-progress",
+      "dueDate": "2026-05-28",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "uxpif8bzvdsmuo5u",
+      "createdAt": "2026-05-29T08:56:39.204Z",
+      "updatedAt": "2026-05-29T13:54:56.613Z",
+      "title": "Jani Nah",
+      "priority": "medium",
+      "status": "review",
+      "dueDate": "2026-05-28",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "hqnon209581nz4ol",
+      "createdAt": "2026-05-29T08:56:40.517Z",
+      "updatedAt": "2026-05-29T08:56:40.517Z",
+      "title": "Jani Nah",
+      "priority": "medium",
+      "status": "todo",
+      "dueDate": "2026-05-28",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    },
+    {
+      "_id": "wnqbc7tvmqeysb7s",
+      "createdAt": "2026-05-29T08:57:14.438Z",
+      "updatedAt": "2026-05-29T13:55:07.756Z",
+      "title": "Kemne ki Sala",
+      "priority": "high",
+      "status": "completed",
+      "dueDate": "2026-05-21",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00"
+    }
+  ],
+  "expenses": [],
+  "expensecategories": [],
+  "invoices": [
+    {
+      "_id": "5x25rkv0yqbte54u",
+      "createdAt": "2026-05-29T09:28:28.521Z",
+      "updatedAt": "2026-05-29T09:28:28.521Z",
+      "clientId": "orhvb0mibkiwc1fk",
+      "dueDate": "2026-05-28",
+      "amount": 2000,
+      "currency": "BDT",
+      "lineItems": [
+        {
+          "description": "Professional Services",
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000
+        }
+      ],
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "invoiceNumber": "INV-2026-0001"
+    },
+    {
+      "_id": "scp8eidgabxwc21m",
+      "createdAt": "2026-05-29T09:43:05.835Z",
+      "updatedAt": "2026-05-29T09:43:43.516Z",
+      "clientId": "7u9430uco8kjmwly",
+      "dueDate": "2026-05-06",
+      "amount": 22260,
+      "currency": "BDT",
+      "lineItems": [
+        {
+          "description": "Custom Development & branding retainer",
+          "quantity": 1,
+          "rate": 1200,
+          "amount": 1200
+        },
+        {
+          "description": "Custom Development & branding retainer",
+          "quantity": 1,
+          "rate": 20000,
+          "amount": 20000
+        }
+      ],
+      "notes": "",
+      "status": "paid",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "invoiceNumber": "INV-2026-0003"
+    }
+  ],
+  "payments": [],
+  "projects": [
+    {
+      "_id": "j8stcl0dhqq6wz53",
+      "createdAt": "2026-05-29T09:21:03.751Z",
+      "updatedAt": "2026-05-29T13:54:28.195Z",
+      "name": "Jnainah Kajta Ki vai",
+      "clientId": "orhvb0mibkiwc1fk",
+      "status": "on_hold",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "deliverables": [
+        {
+          "title": "Jani nAh 1",
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "timelogs": [
+    {
+      "_id": "y820iopsoizlaxj9",
+      "createdAt": "2026-05-29T13:53:53.919Z",
+      "updatedAt": "2026-05-29T13:53:53.919Z",
+      "hours": 2,
+      "description": "Jani nha bro",
+      "logDate": "2026-05-29T13:53:51.865Z",
+      "projectId": "j8stcl0dhqq6wz53",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "userId": "6a077f67b28c9045e705cf02"
+    }
+  ]
+}

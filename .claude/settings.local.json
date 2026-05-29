@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(node server.js)",
+      "Bash(Start-Process *)",
+      "PowerShell(Start-Process \"http://localhost:3000\")",
+      "Bash(node scripts/seedAdmin.js)",
+      "PowerShell($token = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDc3ZjY3YjI4YzkwNDVlNzA1Y2YwMiIsImlhdCI6MTc3ODg3NjI4NSwiZXhwIjoxNzgxNDY4Mjg1fQ.mLtNVndNzh8JDvoBnncuD8a00CTjtmd1RQbgQ9R7gJE\"; $headers = @{ Authorization = \"Bearer $token\" }; $me = Invoke-RestMethod -Uri \"http://localhost:5000/api/auth/me\" -Headers $headers; $me | ConvertTo-Json -Depth 5)",
+      "Bash(npm install *)",
+      "PowerShell(Get-ChildItem \"E:\\\\D360\\\\client\\\\src\" -Recurse -Depth 4 | Where-Object { -not $_.FullName.Contains\\(\"node_modules\"\\) })",
+      "PowerShell(Get-ChildItem \"E:\\\\D360\\\\server\" -Depth 2 | Where-Object { -not $_.PSIsContainer } | Select-Object FullName)",
+      "PowerShell(netstat *)",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:5000/api/health\" -Method Get | ConvertTo-Json)",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"require\\('recharts'\\); console.log\\('recharts OK'\\)\")",
+      "Bash(npx vite *)",
+      "Bash(ping -n 4 127.0.0.1)",
+      "Bash(Get-ChildItem -Path \"E:\\\\D360\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(Start-Sleep -Seconds 5)",
+      "Bash(Get-Content \"C:\\\\Users\\\\User\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\E--D360\\\\8f172e3e-5657-4313-baee-10bb7633c81c\\\\tasks\\\\b54vm5gdx.output\")",
+      "Bash(start *)"
+    ]
+  }
+}

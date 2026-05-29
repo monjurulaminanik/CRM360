@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-dark font-sans text-sm;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-dark;
+  }
+
+  h1 { @apply text-3xl font-bold; }
+  h2 { @apply text-2xl font-semibold; }
+  h3 { @apply text-xl font-semibold; }
+  h4 { @apply text-lg font-medium; }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  ::selection {
+    @apply bg-primary-light text-primary;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+@layer components {
+  /* ── Scrollbar ── */
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; height: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { @apply bg-transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+
+  /* ── Layout helpers ── */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+
+  .section-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .divider {
+    @apply border-t border-gray-100 my-4;
+  }
+
+  /* ── Text ── */
+  .link {
+    @apply text-primary hover:text-primary-dark underline-offset-2 hover:underline transition-all duration-200;
+  }
+
+  /* ── Forms ── */
+  .form-group {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .input {
+    @apply w-full h-9 rounded-lg border border-gray-300 bg-white text-sm text-dark
+           placeholder:text-gray-400 px-3 py-2 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-medium rounded-lg h-9 px-4 text-sm
+           bg-primary text-white hover:bg-primary-dark active:scale-[0.98]
+           transition-all duration-200 focus:outline-none focus-visible:ring-2
+           focus-visible:ring-primary focus-visible:ring-offset-2 select-none
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-medium rounded-lg h-9 px-4 text-sm
+           bg-gray-100 text-dark hover:bg-gray-200 active:scale-[0.98]
+           transition-all duration-200 focus:outline-none select-none
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-white rounded-xl border border-gray-100 shadow-card p-5 transition-all duration-200;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600
+           hover:bg-primary-light hover:text-primary transition-all duration-200
+           cursor-pointer text-sm font-medium;
+  }
+
+  .sidebar-item.active {
+    @apply bg-primary-light text-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .animate-fade-in  { animation: fadeIn 0.2s ease-out; }
+  .animate-slide-up { animation: slideUp 0.2s ease-out; }
+  .animate-slide-down { animation: slideDown 0.15s ease-out; }
+  .animate-zoom-in { animation: zoomIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+  /* Bengali font */
+  .font-bn {
+    font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
