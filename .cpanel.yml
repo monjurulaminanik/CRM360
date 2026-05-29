@@ -1,7 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/brandsfa/d360-backend
-    - /bin/cp -r $CPANEL_BASE_DIR/server/* $DEPLOYPATH/
-    - export DEPLOYPATH=/home/brandsfa/crm.imanik.com
-    - /bin/cp -r $CPANEL_BASE_DIR/client/dist/* $DEPLOYPATH/
+    - /bin/cp -r /home/brandsfa/d360-repo/server/. /home/brandsfa/d360-backend/
+    - /bin/cp -r /home/brandsfa/d360-repo/client/dist/. /home/brandsfa/crm.imanik.com/
