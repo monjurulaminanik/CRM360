@@ -5,13 +5,77 @@ import {
   PlusCircle, AlertCircle, FileText, ChevronRight, X, Info, TrendingUp, CheckSquare
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import api from '../services/api';
+import { useLanguageStore } from '../store/languageStore';
+
+const adsTranslations = {
+  en: {
+    metaAdsLibrary: 'Meta Ads Library',
+    liveAdsFeed: 'Active Ads Feed',
+    liveMetaApi: 'Live Meta API Mode',
+    offlineSimulation: 'Offline Simulation Mode',
+    scrapedLive: 'Scraped live from Meta Ads Library Index targeting Page ID',
+    closeView: 'Close View',
+    loadingAds: 'Connecting to Meta Ads Library...',
+    failedFetch: 'Failed to fetch live ads',
+    noAdsFound: 'No active advertisements found in Facebook Ad Library.',
+    useOfflineFallback: 'Switch to Offline Simulation',
+    enterPageIdPrompt: 'Please configure a Facebook Page ID to view live active campaigns.',
+    facebookPageId: 'Facebook Page ID',
+    fetchLiveAds: 'Fetch Live Ads',
+    active: 'Active',
+    estSpend: 'Est. Spend',
+    destinationLink: 'Meta Destination Link',
+    targetPlatforms: 'Target Platforms',
+    mockVisual: 'Mock Visual Content',
+    registerCompetitor: 'Register Competitor',
+    competitorName: 'Competitor Brand Name',
+    websiteDomain: 'Website Domain',
+    coreFocus: 'Primary Core Focus',
+    cancel: 'Cancel',
+    registerBrand: 'Register Brand',
+    enterPageId: 'Enter Facebook Page ID (Optional)',
+    simulatedAdsText: 'Note: Showing simulated campaign archives. Connect to the Live Meta API to track real-time target audience variations.',
+  },
+  bn: {
+    metaAdsLibrary: 'মেটা অ্যাডস লাইব্রেরি',
+    liveAdsFeed: 'সক্রিয় বিজ্ঞাপন ফিড',
+    liveMetaApi: 'লাইভ মেটা এপিআই মোড',
+    offlineSimulation: 'অফলাইন সিমুলেশন মোড',
+    scrapedLive: 'ফেসবুক পেজ আইডি থেকে সরাসরি মেটা অ্যাডস লাইব্রেরি ইনডেক্স যাচাই করা হয়েছে',
+    closeView: 'বন্ধ করুন',
+    loadingAds: 'মেটা অ্যাডস লাইব্রেরির সাথে সংযোগ করা হচ্ছে...',
+    failedFetch: 'লাইভ বিজ্ঞাপন লোড করতে ব্যর্থ হয়েছে',
+    noAdsFound: 'ফেসবুক অ্যাড লাইব্রেরিতে কোনো সক্রিয় বিজ্ঞাপন পাওয়া যায়নি।',
+    useOfflineFallback: 'অফলাইন সিমুলেশন মোডে দেখুন',
+    enterPageIdPrompt: 'লাইভ প্রচারণা দেখতে একটি ফেসবুক পেজ আইডি সেট আপ করুন।',
+    facebookPageId: 'ফেসবুক পেজ আইডি',
+    fetchLiveAds: 'লাইভ অ্যাডস দেখুন',
+    active: 'সক্রিয়',
+    estSpend: 'আনুমানিক খরচ',
+    destinationLink: 'মেটা ডেস্টিনেশন লিংক',
+    targetPlatforms: 'টার্গেট প্লাটফর্ম',
+    mockVisual: 'খসড়া ভিজ্যুয়াল কন্টেন্ট',
+    registerCompetitor: 'প্রতিযোগী নিবন্ধন করুন',
+    competitorName: 'প্রতিযোগীর ব্র্যান্ড নাম',
+    websiteDomain: 'ওয়েবসাইট ডোমেইন',
+    coreFocus: 'মূল ফোকাস এরিয়া',
+    cancel: 'বাতিল করুন',
+    registerBrand: 'ব্র্যান্ড নিবন্ধন করুন',
+    enterPageId: 'ফেসবুক পেজ আইডি লিখুন (ঐচ্ছিক)',
+    simulatedAdsText: 'সতর্কতা: এটি একটি অফলাইন খসড়া আর্কাইভ। বাস্তব প্রচারণার পরিবর্তনসমূহ ট্র্যাক করার জন্য লাইভ মেটা এপিআই যুক্ত করুন।',
+  }
+};
 
 export default function CompetitorPage() {
   const [competitors, setCompetitors] = useState([
-    { id: '1', name: 'DigitalForce Agency', website: 'www.digitalforce.com', daRank: 42, activeAds: 12, youtubeFrequency: '2 videos/week', primaryFocus: 'SEO & Content' },
-    { id: '2', name: 'NextGen Creative Hub', website: 'www.nextgencreative.io', daRank: 35, activeAds: 8, youtubeFrequency: 'Monthly sync', primaryFocus: 'Social Media & PPC' },
-    { id: '3', name: 'Vortex Tech & Dev', website: 'www.vortextech.co', daRank: 50, activeAds: 24, youtubeFrequency: 'Daily Shorts', primaryFocus: 'Web Dev & Software' },
+    { id: '1', name: 'DigitalForce Agency', website: 'www.digitalforce.com', daRank: 42, activeAds: 12, youtubeFrequency: '2 videos/week', primaryFocus: 'SEO & Content', facebookPageId: '106198901389812' },
+    { id: '2', name: 'NextGen Creative Hub', website: 'www.nextgencreative.io', daRank: 35, activeAds: 8, youtubeFrequency: 'Monthly sync', primaryFocus: 'Social Media & PPC', facebookPageId: '107474441289123' },
+    { id: '3', name: 'Vortex Tech & Dev', website: 'www.vortextech.co', daRank: 50, activeAds: 24, youtubeFrequency: 'Daily Shorts', primaryFocus: 'Web Dev & Software', facebookPageId: '102938475610293' },
   ]);
+
+  const { language } = useLanguageStore();
+  const ln = adsTranslations[language] || adsTranslations['en'];
 
   // Sentinel Monitor Settings
   const [isSyncActive, setIsSyncActive] = useState(true);
@@ -26,11 +90,56 @@ export default function CompetitorPage() {
   const [newName, setNewName] = useState('');
   const [newWebsite, setNewWebsite] = useState('');
   const [newFocus, setNewFocus] = useState('SEO & Content');
+  const [newFacebookPageId, setNewFacebookPageId] = useState('');
 
   // Interactive Simulation states
   const [selectedCompetitorForAds, setSelectedCompetitorForAds] = useState(null);
   const [selectedCompetitorForReport, setSelectedCompetitorForReport] = useState(null);
   const [selectedCompetitorForBacklinks, setSelectedCompetitorForBacklinks] = useState(null);
+
+  // Live Meta Ads state variables
+  const [activeAdsList, setActiveAdsList] = useState([]);
+  const [isLoadingAds, setIsLoadingAds] = useState(false);
+  const [adsError, setAdsError] = useState(null);
+  const [isLiveMode, setIsLiveMode] = useState(false);
+  const [inputPageId, setInputPageId] = useState('');
+
+  const fetchLiveAds = async (pageId) => {
+    if (!pageId) return;
+    setIsLoadingAds(true);
+    setAdsError(null);
+    try {
+      const response = await api.get('/competitors/ads', {
+        params: { page_id: pageId }
+      });
+      if (response.data && response.data.success) {
+        setActiveAdsList(response.data.data || []);
+        setIsLiveMode(true);
+      } else {
+        setAdsError(response.data?.message || 'Failed to fetch ads from Meta API.');
+        setIsLiveMode(false);
+      }
+    } catch (err) {
+      console.error('Failed fetching competitor ads:', err);
+      const errorMsg = err.response?.data?.message || 'Error connecting to the backend ads endpoint.';
+      setAdsError(errorMsg);
+      setIsLiveMode(false);
+    } finally {
+      setIsLoadingAds(false);
+    }
+  };
+
+  const handleOpenAdsModal = (c) => {
+    setSelectedCompetitorForAds(c);
+    setInputPageId(c.facebookPageId || '');
+    if (c.facebookPageId) {
+      fetchLiveAds(c.facebookPageId);
+    } else {
+      setActiveAdsList([]);
+      setAdsError(null);
+      setIsLiveMode(false);
+    }
+  };
 
   // MOCK COMPETITOR ADS DATABASE
   const competitorAdsDatabase = {
@@ -159,12 +268,14 @@ export default function CompetitorPage() {
       daRank: Math.floor(Math.random() * 40) + 15,
       activeAds: Math.floor(Math.random() * 15) + 2,
       youtubeFrequency: 'Weekly updates',
-      primaryFocus: newFocus
+      primaryFocus: newFocus,
+      facebookPageId: newFacebookPageId.trim()
     };
 
     setCompetitors([...competitors, newComp]);
     setNewName('');
     setNewWebsite('');
+    setNewFacebookPageId('');
     setShowAddModal(false);
     toast.success('New competitor registered to monitor panel!');
   };
@@ -359,13 +470,10 @@ export default function CompetitorPage() {
             <div className="pt-2 flex flex-col gap-2">
               <div className="flex gap-2">
                 <button
-                  onClick={() => {
-                    setSelectedCompetitorForAds(c);
-                    toast.success(`Opening active Facebook Ads Library feed for ${c.name}`);
-                  }}
+                  onClick={() => handleOpenAdsModal(c)}
                   className="flex-1 btn-secondary h-8.5 text-[10px] font-bold gap-1 hover:text-primary hover:border-primary/20"
                 >
-                  <Share2 className="h-3.5 w-3.5" /> Meta Ads Library
+                  <Share2 className="h-3.5 w-3.5" /> {ln.metaAdsLibrary}
                 </button>
 
                 <button
@@ -403,110 +511,320 @@ export default function CompetitorPage() {
 
       {/* ── INTERACTIVE 1: LIVE FACEBOOK ADS LIBRARY DRAWER/MODAL ── */}
       {selectedCompetitorForAds && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center z-50 animate-fade-in p-4">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 animate-fade-in p-4">
           <div className="bg-slate-50 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col border border-gray-100 shadow-modal overflow-hidden">
             
             {/* Header */}
             <div className="bg-white px-5 py-4 border-b border-gray-100 flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-gray-800 flex items-center gap-1.5">
-                  <Share2 className="h-4.5 w-4.5 text-primary" /> Active Ads Feed: {selectedCompetitorForAds.name}
+                  <Share2 className="h-4.5 w-4.5 text-primary" /> {ln.liveAdsFeed}: {selectedCompetitorForAds.name}
                 </h3>
-                <p className="text-[10px] text-gray-400 mt-0.5">Scraped live from Meta Ads Library Index targeting domain {selectedCompetitorForAds.website}</p>
+                <p className="text-[10px] text-gray-400 mt-0.5">
+                  {inputPageId 
+                    ? `${ln.scrapedLive}: ${inputPageId}`
+                    : ln.enterPageIdPrompt}
+                </p>
               </div>
 
               <button 
-                onClick={() => setSelectedCompetitorForAds(null)}
+                onClick={() => {
+                  setSelectedCompetitorForAds(null);
+                  setActiveAdsList([]);
+                  setAdsError(null);
+                }}
                 className="w-8 h-8 rounded-full hover:bg-slate-100 text-gray-500 flex items-center justify-center transition-colors"
               >
                 <X className="h-4 w-4" />
               </button>
             </div>
 
+            {/* Page ID Setup and Mode Switcher */}
+            <div className="bg-white px-5 py-3 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
+              <div className="flex-1 flex gap-2 items-center">
+                <span className="text-[10px] font-bold text-gray-500 shrink-0">{ln.facebookPageId}:</span>
+                <input
+                  type="text"
+                  placeholder="e.g. 106198901389812"
+                  value={inputPageId}
+                  onChange={(e) => setInputPageId(e.target.value)}
+                  className="input text-[11px] h-7 px-2 flex-1 bg-white border border-gray-250 focus:border-primary rounded"
+                />
+                <button
+                  onClick={() => {
+                    if (!inputPageId.trim()) {
+                      toast.error('Please enter a Facebook Page ID.');
+                      return;
+                    }
+                    // Update competitor Page ID in local state
+                    setCompetitors(prev => prev.map(c => 
+                      c.id === selectedCompetitorForAds.id 
+                        ? { ...c, facebookPageId: inputPageId.trim() } 
+                        : c
+                    ));
+                    fetchLiveAds(inputPageId.trim());
+                  }}
+                  className="btn-primary h-7 px-3 text-[10px] font-bold shrink-0 flex items-center gap-1"
+                >
+                  <RefreshCw className="h-3 w-3" /> {ln.fetchLiveAds}
+                </button>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {isLiveMode ? (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-green-50 border border-green-200 text-success">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" /> {ln.liveMetaApi}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-50 border border-amber-200 text-amber-700">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" /> {ln.offlineSimulation}
+                  </span>
+                )}
+              </div>
+            </div>
+
             {/* Ads List Content */}
-            <div className="p-5 overflow-y-auto space-y-5 flex-1">
-              {competitorAdsDatabase[selectedCompetitorForAds.id] ? (
-                competitorAdsDatabase[selectedCompetitorForAds.id].map((ad) => (
-                  <div key={ad.id} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 space-y-4">
-                    
-                    {/* Meta Sponsor header */}
-                    <div className="flex justify-between items-center text-xs">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold text-gray-700">
-                          {selectedCompetitorForAds.name.charAt(0)}
+            <div className="p-5 overflow-y-auto space-y-5 flex-1 bg-slate-50/30">
+              {isLoadingAds ? (
+                // Modern Skeleton Loading Screen
+                <div className="space-y-4 animate-pulse">
+                  {[1, 2].map((n) => (
+                    <div key={n} className="bg-white rounded-xl border border-gray-100 p-4 space-y-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-full bg-slate-200" />
+                          <div className="space-y-1.5">
+                            <div className="h-3 w-28 bg-slate-200 rounded" />
+                            <div className="h-2 w-16 bg-slate-200 rounded" />
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-bold text-gray-800">{selectedCompetitorForAds.name}</p>
-                          <p className="text-[9px] text-gray-400">Sponsored · Launched {ad.launched}</p>
-                        </div>
+                        <div className="h-4 w-12 bg-slate-200 rounded-full" />
                       </div>
-
-                      <div className="text-right">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold bg-green-50 text-success border border-green-100">
-                          🟢 Active
-                        </span>
-                        <p className="text-[9px] text-gray-400 mt-1">Est. Spend: {ad.spendRange}</p>
+                      <div className="space-y-2">
+                        <div className="h-2.5 w-full bg-slate-200 rounded" />
+                        <div className="h-2.5 w-5/6 bg-slate-200 rounded" />
+                      </div>
+                      <div className="aspect-video bg-slate-100 rounded-xl flex items-center justify-center text-slate-300 font-medium text-[10px] border border-dashed border-slate-200">
+                        {ln.loadingAds}
                       </div>
                     </div>
-
-                    {/* Ad text */}
-                    <p className="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line">{ad.body}</p>
-
-                    {/* Mock Creative Image */}
-                    <div 
-                      style={{ background: ad.imageUrl }}
-                      className="aspect-video rounded-xl flex flex-col items-center justify-center text-white relative overflow-hidden shadow-inner p-4"
-                    >
-                      <div className="absolute inset-0 bg-slate-900/10" />
-                      <span className="font-extrabold tracking-wider text-sm relative z-10 text-center font-heading drop-shadow-md">
-                        {ad.imageText}
-                      </span>
-                      <span className="text-[8px] tracking-widest text-white/70 uppercase absolute bottom-2 relative z-10 mt-1">
-                        Mock Visual Content
-                      </span>
-                    </div>
-
-                    {/* Bottom CTA Block */}
-                    <div className="flex items-center justify-between border border-slate-100 bg-slate-50/50 p-3 rounded-xl">
-                      <div>
-                        <p className="text-[9px] text-gray-400 uppercase tracking-widest leading-none">Meta Destination Link</p>
-                        <h5 className="font-bold text-[10px] text-gray-700 mt-1 truncate max-w-[250px]">{ad.title}</h5>
-                      </div>
-
-                      <button 
-                        onClick={() => toast.success(`Simulating destination link click to: ${selectedCompetitorForAds.website}`)}
-                        className="btn-primary h-8 px-4 text-[10px] font-bold shrink-0 shadow-xs"
-                      >
-                        {ad.cta}
-                      </button>
-                    </div>
-
-                    {/* Platforms list */}
-                    <div className="flex gap-2.5 items-center pt-1 text-[9px] text-gray-400 font-semibold">
-                      <span>Target Platforms:</span>
-                      {ad.platforms.map((p) => (
-                        <span key={p} className="bg-slate-100 px-2 py-0.5 rounded uppercase">{p.replace('_', ' ')}</span>
-                      ))}
-                    </div>
-
-                  </div>
-                ))
-              ) : (
-                <div className="text-center py-10 space-y-2">
-                  <AlertCircle className="h-8 w-8 text-amber-500 mx-auto" />
-                  <p className="text-xs font-semibold text-gray-700">No active ads stored offline.</p>
-                  <p className="text-[10px] text-gray-400">Click "Sync Live API Data" at the top to simulate loading competitor meta ad index tables.</p>
+                  ))}
                 </div>
+              ) : adsError ? (
+                // Error screen with configuration guidelines
+                <div className="bg-red-50/50 border border-red-100 rounded-xl p-5 text-center space-y-3.5">
+                  <AlertCircle className="h-8 w-8 text-danger mx-auto animate-bounce" />
+                  <div>
+                    <h4 className="text-xs font-bold text-red-800">{ln.failedFetch}</h4>
+                    <p className="text-[10px] text-red-600 mt-1 leading-normal max-w-md mx-auto">{adsError}</p>
+                  </div>
+                  
+                  <div className="text-[9px] text-gray-500 bg-white/80 p-3 rounded-lg border border-red-50 text-left space-y-1 font-mono">
+                    <p className="font-bold text-gray-700 uppercase tracking-wider mb-1">🔧 Troubleshooting Guide:</p>
+                    <p>1. Check if FB_ACCESS_TOKEN is configured in server/.env</p>
+                    <p>2. Verify if the Page ID is correct and active.</p>
+                    <p>3. Long-lived token might be expired. Re-generate one.</p>
+                  </div>
+
+                  <div className="flex gap-2 justify-center pt-1">
+                    <button
+                      onClick={() => {
+                        setAdsError(null);
+                        setIsLiveMode(false);
+                        toast.success('Switched back to simulated campaigns.');
+                      }}
+                      className="btn-secondary h-8 px-4 text-[10px] font-bold bg-white"
+                    >
+                      {ln.useOfflineFallback}
+                    </button>
+                    <button
+                      onClick={() => inputPageId && fetchLiveAds(inputPageId)}
+                      className="btn-primary h-8 px-4 text-[10px] font-bold bg-danger hover:bg-danger-hover border-none"
+                    >
+                      Retry
+                    </button>
+                  </div>
+                </div>
+              ) : isLiveMode ? (
+                // Live active ads list retrieved from Meta
+                activeAdsList.length > 0 ? (
+                  activeAdsList.map((ad) => (
+                    <div key={ad.id} className="bg-white rounded-xl border border-gray-100 shadow-xs p-4 space-y-4 hover:shadow-sm transition-shadow">
+                      
+                      {/* Meta Sponsor header */}
+                      <div className="flex justify-between items-center text-xs">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-gray-700">
+                            {selectedCompetitorForAds.name.charAt(0)}
+                          </div>
+                          <div>
+                            <p className="font-bold text-gray-800">{selectedCompetitorForAds.name}</p>
+                            <p className="text-[9px] text-gray-400">Sponsored · Started {ad.launched}</p>
+                          </div>
+                        </div>
+
+                        <div className="text-right">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold bg-green-50 text-success border border-green-100">
+                            🟢 {ln.active}
+                          </span>
+                          <p className="text-[8px] text-gray-400 mt-1 font-mono">ID: {ad.id}</p>
+                        </div>
+                      </div>
+
+                      {/* Ad text */}
+                      <p className="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line bg-slate-50/50 p-2.5 rounded-lg border border-slate-100/50">{ad.body}</p>
+
+                      {/* Ad Creative - Gradients styled beautifully as Meta visual placement mock */}
+                      <div 
+                        className="aspect-video rounded-xl flex flex-col items-center justify-center text-white relative overflow-hidden shadow-inner p-4 bg-gradient-to-br from-primary to-indigo-600"
+                      >
+                        <div className="absolute inset-0 bg-slate-900/10" />
+                        <svg className="h-12 w-12 text-white/20 absolute -right-3 -bottom-3 transform rotate-12 fill-current" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span className="font-extrabold tracking-wider text-sm relative z-10 text-center font-heading drop-shadow-md max-w-sm">
+                          {ad.title}
+                        </span>
+                        <span className="text-[8px] tracking-widest text-white/70 uppercase absolute bottom-2 relative z-10 mt-1.5 flex items-center gap-1 bg-black/20 px-2 py-0.5 rounded-full">
+                          <Globe className="h-3 w-3" /> Live Creative Placement
+                        </span>
+                      </div>
+
+                      {/* Bottom CTA Block */}
+                      <div className="flex items-center justify-between border border-slate-100 bg-slate-50/50 p-3 rounded-xl">
+                        <div className="min-w-0 flex-1 pr-3">
+                          <p className="text-[9px] text-gray-400 uppercase tracking-widest leading-none">{ln.destinationLink}</p>
+                          <h5 className="font-bold text-[10px] text-gray-700 mt-1 truncate">{ad.title}</h5>
+                        </div>
+
+                        {ad.snapshotUrl && (
+                          <a 
+                            href={ad.snapshotUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn-primary h-8 px-3 text-[10px] font-bold shrink-0 shadow-xs flex items-center gap-1.5"
+                          >
+                            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            View Ad
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Platforms list */}
+                      <div className="flex gap-2.5 items-center pt-1 text-[9px] text-gray-400 font-semibold border-t border-gray-50/50">
+                        <span>{ln.targetPlatforms}:</span>
+                        {ad.platforms.map((p) => (
+                          <span key={p} className="bg-slate-100 px-2 py-0.5 rounded uppercase text-[8px] text-gray-500 font-bold">{p.replace('_', ' ')}</span>
+                        ))}
+                      </div>
+
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-center py-10 bg-white rounded-xl border border-gray-150 p-6 space-y-2 shadow-xs">
+                    <AlertCircle className="h-8 w-8 text-amber-500 mx-auto" />
+                    <p className="text-xs font-semibold text-gray-700">{ln.noAdsFound}</p>
+                    <p className="text-[10px] text-gray-400 leading-normal max-w-sm mx-auto">This page currently has no active ads registered in Meta's transparency index.</p>
+                  </div>
+                )
+              ) : (
+                // Simulated Offline Fallback list
+                competitorAdsDatabase[selectedCompetitorForAds.id] ? (
+                  <>
+                    <div className="bg-amber-50/50 border border-amber-100 rounded-xl p-3.5 text-[10px] text-amber-800 leading-relaxed mb-4 flex items-start gap-2 bg-white">
+                      <Info className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                      <span>{ln.simulatedAdsText}</span>
+                    </div>
+
+                    {competitorAdsDatabase[selectedCompetitorForAds.id].map((ad) => (
+                      <div key={ad.id} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 space-y-4">
+                        
+                        {/* Meta Sponsor header */}
+                        <div className="flex justify-between items-center text-xs">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold text-gray-700">
+                              {selectedCompetitorForAds.name.charAt(0)}
+                            </div>
+                            <div>
+                              <p className="font-bold text-gray-800">{selectedCompetitorForAds.name}</p>
+                              <p className="text-[9px] text-gray-400">Sponsored · Launched {ad.launched}</p>
+                            </div>
+                          </div>
+
+                          <div className="text-right">
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold bg-green-50 text-success border border-green-100">
+                              🟢 {ln.active}
+                            </span>
+                            <p className="text-[9px] text-gray-400 mt-1">{ln.estSpend}: {ad.spendRange}</p>
+                          </div>
+                        </div>
+
+                        {/* Ad text */}
+                        <p className="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line">{ad.body}</p>
+
+                        {/* Mock Creative Image */}
+                        <div 
+                          style={{ background: ad.imageUrl }}
+                          className="aspect-video rounded-xl flex flex-col items-center justify-center text-white relative overflow-hidden shadow-inner p-4"
+                        >
+                          <div className="absolute inset-0 bg-slate-900/10" />
+                          <span className="font-extrabold tracking-wider text-sm relative z-10 text-center font-heading drop-shadow-md">
+                            {ad.imageText}
+                          </span>
+                          <span className="text-[8px] tracking-widest text-white/70 uppercase absolute bottom-2 relative z-10 mt-1">
+                            {ln.mockVisual}
+                          </span>
+                        </div>
+
+                        {/* Bottom CTA Block */}
+                        <div className="flex items-center justify-between border border-slate-100 bg-slate-50/50 p-3 rounded-xl">
+                          <div>
+                            <p className="text-[9px] text-gray-400 uppercase tracking-widest leading-none">{ln.destinationLink}</p>
+                            <h5 className="font-bold text-[10px] text-gray-700 mt-1 truncate max-w-[250px]">{ad.title}</h5>
+                          </div>
+
+                          <button 
+                            onClick={() => toast.success(`Simulating destination link click to: ${selectedCompetitorForAds.website}`)}
+                            className="btn-primary h-8 px-4 text-[10px] font-bold shrink-0 shadow-xs"
+                          >
+                            {ad.cta}
+                          </button>
+                        </div>
+
+                        {/* Platforms list */}
+                        <div className="flex gap-2.5 items-center pt-1 text-[9px] text-gray-400 font-semibold">
+                          <span>{ln.targetPlatforms}:</span>
+                          {ad.platforms.map((p) => (
+                            <span key={p} className="bg-slate-100 px-2 py-0.5 rounded uppercase">{p.replace('_', ' ')}</span>
+                          ))}
+                        </div>
+
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <div className="text-center py-10 space-y-2">
+                    <AlertCircle className="h-8 w-8 text-amber-500 mx-auto" />
+                    <p className="text-xs font-semibold text-gray-700">No active ads stored offline.</p>
+                    <p className="text-[10px] text-gray-400">Please set up a Facebook Page ID above to fetch live data from Meta Ads Library.</p>
+                  </div>
+                )
               )}
             </div>
 
             {/* Footer */}
             <div className="bg-white px-5 py-3.5 border-t border-gray-100 flex justify-end">
               <button 
-                onClick={() => setSelectedCompetitorForAds(null)}
+                onClick={() => {
+                  setSelectedCompetitorForAds(null);
+                  setActiveAdsList([]);
+                  setAdsError(null);
+                }}
                 className="btn-secondary h-8 text-[11px] px-4 font-bold"
               >
-                Close View
+                {ln.closeView}
               </button>
             </div>
 
@@ -797,12 +1115,22 @@ export default function CompetitorPage() {
               </div>
 
               <div className="form-group">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Website Domain</label>
+                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{ln.websiteDomain}</label>
                 <input
                   className="input text-xs h-9 bg-white"
                   placeholder="e.g. www.digitalforce.com"
                   value={newWebsite}
                   onChange={(e) => setNewWebsite(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{ln.enterPageId}</label>
+                <input
+                  className="input text-xs h-9 bg-white"
+                  placeholder="e.g. 106198901389812"
+                  value={newFacebookPageId}
+                  onChange={(e) => setNewFacebookPageId(e.target.value)}
                 />
               </div>
 

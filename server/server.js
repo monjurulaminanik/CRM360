@@ -23,6 +23,7 @@ const invoiceRoutes = require('./routes/invoices');
 const projectRoutes = require('./routes/projects');
 const expenseRoutes = require('./routes/expenses');
 const recruitmentRoutes = require('./routes/recruitment');
+const competitorRoutes = require('./routes/competitors');
 
 const app = express();
 const server = http.createServer(app);
@@ -58,6 +59,7 @@ app.use('/api/invoices', invoiceRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/recruitment', recruitmentRoutes);
+app.use('/api/competitors', competitorRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'D360 API is running' }));
