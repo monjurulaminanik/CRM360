@@ -16,7 +16,7 @@ import ClientDetailPage from './pages/ClientDetailPage';
 import WhatsAppPage from './pages/WhatsAppPage';
 import TasksPage from './pages/TasksPage';
 import InvoicesPage from './pages/InvoicesPage';
-import ProjectsPage from './pages/ProjectsPage';
+import ProjectsRouter from './pages/pm/ProjectsRouter';
 import ExpensesPage from './pages/ExpensesPage';
 import RecruitmentPage from './pages/RecruitmentPage';
 import ReportsPage from './pages/ReportsPage';
@@ -55,7 +55,7 @@ export default function App() {
         <Route path="clients/:id" element={<ClientDetailPage />} />
         <Route path="whatsapp" element={<WhatsAppPage />} />
         <Route path="tasks" element={<TasksPage />} />
-        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects/*" element={<ProjectsRouter />} />
         <Route path="invoices" element={<InvoicesPage />} />
         <Route path="expenses" element={<ExpensesPage />} />
         <Route path="recruitment" element={<RecruitmentPage />} />

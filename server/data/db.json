@@ -4,47 +4,47 @@
       "_id": "6a077f67b28c9045e705cf02",
       "name": "Monjurul Amin Anik",
       "email": "anik@dawatit.com",
-      "password": "$2a$12$ZTTozsCUUAKqhvxzYiEQfe3jqK6ZxVdLpFH8x.f4nTRX1cNWFIRhm",
+      "password": "$2a$12$o.JTHRAdxYNA6P3ERgHJ2OJKJZIXscBbC/n.e0a4Ho85p3zGcUJpq",
       "role": "admin",
       "isActive": true,
       "createdAt": "2026-05-24T12:10:18.609Z",
-      "updatedAt": "2026-05-29T17:03:43.465Z",
-      "lastLogin": 1780079520312,
+      "updatedAt": "2026-06-04T20:40:55.445Z",
+      "lastLogin": 1780505130478,
       "tenantId": "6a077f67b28c9045e705cf00"
     },
     {
       "_id": "6a077f67b28c9045e705cf0a",
       "name": "Global Superadmin",
       "email": "superadmin@d360.com",
-      "password": "$2a$12$SwN5OG71tQpyKW7rLIcWtO8ts9//gZJwgvbui/1E78Kv5oUarVDX.",
+      "password": "$2a$12$MW4LxGn3xRBp0r36qyXO2ecQOgn86NleV9cF4YoYNHNgCoLFmLyiC",
       "role": "superadmin",
       "isActive": true,
       "createdAt": "2026-05-27T20:27:48.202Z",
-      "updatedAt": "2026-05-29T17:03:43.466Z",
+      "updatedAt": "2026-06-04T20:40:55.445Z",
       "lastLogin": 1780057149255
     },
     {
       "_id": "6a077f67b28c9045e705cf0b",
       "name": "John Hernandez",
       "email": "client@d360.com",
-      "password": "$2a$12$iXW98a6qxCB9.ajXjmpNne6Qhy4hmBO9ajsJp6lBBzG2XCAF6.FIG",
+      "password": "$2a$12$4qpYyQW4RqjkuLYLFRDj5uDEeON8hYzTUANP/wkplMWwZlEIwA1Qu",
       "role": "client",
       "tenantId": "6a077f67b28c9045e705cf00",
       "isActive": true,
       "createdAt": "2026-05-27T20:27:48.202Z",
-      "updatedAt": "2026-05-29T17:03:43.466Z",
+      "updatedAt": "2026-06-04T20:40:55.445Z",
       "lastLogin": 1780057755630
     },
     {
       "_id": "6a077f67b28c9045e705cf0c",
       "name": "Monjurul Amin",
       "email": "employee@d360.com",
-      "password": "$2a$12$UvUzs7CvtPxSrp0Veo3xz.qhHhd6lY0R4y8D76ibIDA44HG7ljY52",
+      "password": "$2a$12$XY.RLdWZSVJfhYg/0zrKgu8Y8Sdk9AjFTb4yMwuXcopJqtQRK4mo2",
       "role": "employee",
       "tenantId": "6a077f67b28c9045e705cf00",
       "isActive": true,
       "createdAt": "2026-05-27T20:27:48.202Z",
-      "updatedAt": "2026-05-29T17:03:43.466Z",
+      "updatedAt": "2026-06-04T20:40:55.445Z",
       "lastLogin": 1779914522402
     }
   ],
@@ -1153,7 +1153,7 @@
     {
       "_id": "j8stcl0dhqq6wz53",
       "createdAt": "2026-05-29T09:21:03.751Z",
-      "updatedAt": "2026-05-29T13:54:28.195Z",
+      "updatedAt": "2026-06-03T16:45:13.762Z",
       "name": "Jnainah Kajta Ki vai",
       "clientId": "orhvb0mibkiwc1fk",
       "status": "on_hold",
@@ -1165,6 +1165,30 @@
           "completed": false
         }
       ]
+    },
+    {
+      "_id": "2pf96bce6okljttp",
+      "createdAt": "2026-06-04T20:41:57.643Z",
+      "updatedAt": "2026-06-04T20:41:57.644Z",
+      "name": "Jni nh kno Ami",
+      "projectType": "marketing",
+      "client": "orhvb0mibkiwc1fk",
+      "description": "Test jni nh",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "projectManager": "6a077f67b28c9045e705cf02"
+    },
+    {
+      "_id": "0c8kxrzj8s0rcoje",
+      "createdAt": "2026-06-04T20:42:08.396Z",
+      "updatedAt": "2026-06-04T20:42:08.396Z",
+      "name": "Jni nh kno Ami",
+      "projectType": "marketing",
+      "client": "orhvb0mibkiwc1fk",
+      "description": "Test jni nh",
+      "tenantId": "6a077f67b28c9045e705cf00",
+      "createdBy": "6a077f67b28c9045e705cf02",
+      "projectManager": "6a077f67b28c9045e705cf02"
     }
   ],
   "timelogs": [
