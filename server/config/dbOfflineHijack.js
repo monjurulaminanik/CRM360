@@ -52,6 +52,7 @@ const hijackAll = () => {
   hijackModel('Client', dbJson.clients);
   hijackModel('Campaign', dbJson.campaigns);
   hijackModel('WhatsAppMessage', dbJson.whatsappmessages);
+  hijackModel('FacebookMessage', dbJson.facebookmessages);
   hijackModel('ClientNote', dbJson.clientnotes);
   hijackModel('LeadNote', dbJson.leadnotes);
   hijackModel('Tenant', dbJson.tenants);

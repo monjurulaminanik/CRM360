@@ -21,6 +21,7 @@ export default function Sidebar({ collapsed, setCollapsed, user, counts = {} }) 
     { to: '/leads', icon: Target, label: 'Leads', badge: counts.leads, key: 'leads' },
     { to: '/clients', icon: Users, label: 'Clients', badge: counts.clients, key: 'clients' },
     { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', badge: counts.whatsapp, badgeColor: 'bg-green-500', key: 'whatsapp' },
+    { to: '/messenger', icon: MessageCircle, label: 'Messenger', key: 'messenger' },
     { to: '/projects', icon: FolderKanban, label: 'Projects', key: 'projects' },
     { to: '/tasks', icon: CheckSquare, label: 'Tasks', key: 'tasks' },
     { to: '/invoices', icon: FileText, label: 'Invoices', key: 'invoices' },

@@ -22,6 +22,7 @@ const loadData = () => {
     clients: [],
     campaigns: [],
     whatsappmessages: [],
+    facebookmessages: [],
     clientnotes: [],
     leadnotes: [],
     employees: [],
@@ -158,7 +159,7 @@ const loadData = () => {
 
   // 3. Populate tenantId across all records that do not have one
   const collections = [
-    'users', 'leads', 'clients', 'campaigns', 'whatsappmessages',
+    'users', 'leads', 'clients', 'campaigns', 'whatsappmessages', 'facebookmessages',
     'clientnotes', 'leadnotes', 'employees', 'departments',
     'designations', 'attendances', 'leavetypes', 'leaves',
     'leavebalances', 'holidays', 'shifts', 'salarystructures',
@@ -400,7 +401,7 @@ class JsonCollection {
     const data = loadData();
     const items = data[this.name] || [];
 
-    if (this.name === 'whatsappmessages') {
+    if (this.name === 'whatsappmessages' || this.name === 'facebookmessages') {
       const convoMap = {};
       
       // Sort items by createdAt descending to ensure we catch the newest first
@@ -453,6 +454,7 @@ const dbJson = {
   clients: new JsonCollection('clients'),
   campaigns: new JsonCollection('campaigns'),
   whatsappmessages: new JsonCollection('whatsappmessages'),
+  facebookmessages: new JsonCollection('facebookmessages'),
   clientnotes: new JsonCollection('clientnotes'),
   leadnotes: new JsonCollection('leadnotes'),
   employees: new JsonCollection('employees'),

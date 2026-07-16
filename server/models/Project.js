@@ -24,7 +24,7 @@ const ProjectSchema = new mongoose.Schema(
     slug: { type: String, trim: true, lowercase: true },
 
     // ── Client & Type ──
-    client: { type: mongoose.Schema.Types.ObjectId, ref: 'Client', required: true },
+    client: { type: mongoose.Schema.Types.ObjectId, ref: 'Client' },
     projectType: {
       type: String,
       enum: ['marketing', 'development', 'branding', 'seo', 'ads', 'content', 'hybrid', 'web-design', 'mobile-app', 'whatsapp-automation'],

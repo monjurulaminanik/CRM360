@@ -18,9 +18,26 @@ const LeadSchema = new mongoose.Schema(
     },
     source: {
       type: String,
-      enum: ['website', 'whatsapp', 'referral', 'social_media', 'cold_call', 'email', 'other'],
+      enum: [
+        'website',
+        'whatsapp',
+        'referral',
+        'social_media',
+        'cold_call',
+        'email',
+        'facebook',
+        'facebook_ads',
+        'messenger',
+        'other',
+      ],
       default: 'other',
     },
+    // Meta / Facebook identifiers
+    metaLeadId: { type: String, sparse: true, unique: true },
+    facebookPsid: { type: String, index: true },
+    metaFormId: { type: String },
+    metaPageId: { type: String },
+    metaAdId: { type: String },
     priority: {
       type: String,
       enum: ['low', 'medium', 'high'],

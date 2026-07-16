@@ -20,6 +20,7 @@ export default function Topbar({ user, setMobileSidebarOpen, lang, setLang }) {
     '/leads': 'Leads',
     '/clients': 'Clients',
     '/whatsapp': 'WhatsApp',
+    '/messenger': 'Messenger',
     '/tasks': 'Tasks',
     '/invoices': 'Invoices',
     '/reports': 'Reports',

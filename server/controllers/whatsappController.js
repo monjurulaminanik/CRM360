@@ -278,14 +278,39 @@ const webhookReceive = async (req, res, next) => {
               status: 'delivered',
             });
 
-            // Auto-link to lead/client by phone
+            // Auto-link or auto-create lead/client by phone
             const phoneNumber = msg.from.replace(/^\+/, '');
-            const lead = await Lead.findOne({ phone: { $regex: phoneNumber } });
+            let lead = await Lead.findOne({ phone: { $regex: phoneNumber.slice(-10) } });
             const client = await Client.findOne({
-              $or: [{ phone: { $regex: phoneNumber } }, { whatsappNumber: { $regex: phoneNumber } }],
+              $or: [
+                { phone: { $regex: phoneNumber.slice(-10) } },
+                { whatsappNumber: { $regex: phoneNumber.slice(-10) } },
+              ],
             });
 
-            if (lead) messageDoc.leadId = lead._id;
+            if (!lead && !client) {
+              const { getMetaDefaults } = require('../utils/metaHelpers');
+              const { tenantId, createdBy } = getMetaDefaults();
+              lead = await Lead.create({
+                name: `WhatsApp ${phoneNumber}`,
+                phone: phoneNumber,
+                source: 'whatsapp',
+                status: 'new',
+                priority: 'medium',
+                tags: ['whatsapp', 'auto-inbound'],
+                notes: `Auto-created from WhatsApp message: ${msg.text?.body || msg.type}`,
+                tenantId,
+                createdBy,
+                lastContactedAt: new Date(),
+              });
+              req.app.get('io').emit('lead:created', lead);
+            }
+
+            if (lead) {
+              messageDoc.leadId = lead._id;
+              lead.lastContactedAt = new Date();
+              await lead.save();
+            }
             if (client) messageDoc.clientId = client._id;
             if (lead || client) await messageDoc.save();
 

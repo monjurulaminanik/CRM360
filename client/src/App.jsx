@@ -14,6 +14,7 @@ import LeadDetailPage from './pages/LeadDetailPage';
 import ClientsPage from './pages/ClientsPage';
 import ClientDetailPage from './pages/ClientDetailPage';
 import WhatsAppPage from './pages/WhatsAppPage';
+import MessengerPage from './pages/MessengerPage';
 import TasksPage from './pages/TasksPage';
 import InvoicesPage from './pages/InvoicesPage';
 import ProjectsRouter from './pages/pm/ProjectsRouter';
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="clients" element={<ClientsPage />} />
         <Route path="clients/:id" element={<ClientDetailPage />} />
         <Route path="whatsapp" element={<WhatsAppPage />} />
+        <Route path="messenger" element={<MessengerPage />} />
         <Route path="tasks" element={<TasksPage />} />
         <Route path="projects/*" element={<ProjectsRouter />} />
         <Route path="invoices" element={<InvoicesPage />} />

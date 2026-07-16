@@ -31,6 +31,9 @@ const COLUMNS = [
 const SOURCE_LABELS = {
   website:      'Website',
   whatsapp:     'WhatsApp',
+  facebook:     'Facebook',
+  facebook_ads: 'FB Ads',
+  messenger:    'Messenger',
   referral:     'Referral',
   social_media: 'Social',
   cold_call:    'Direct',

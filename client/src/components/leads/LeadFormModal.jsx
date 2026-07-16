@@ -4,13 +4,16 @@ import Modal from '../ui/Modal';
 import Button from '../ui/Button';
 
 const SOURCES = [
-  { value: 'whatsapp',    label: 'WhatsApp' },
-  { value: 'website',     label: 'Website' },
-  { value: 'referral',    label: 'Referral' },
-  { value: 'social_media',label: 'Social Media' },
-  { value: 'cold_call',   label: 'Cold Call' },
-  { value: 'email',       label: 'Email' },
-  { value: 'other',       label: 'Other' },
+  { value: 'whatsapp',     label: 'WhatsApp' },
+  { value: 'website',      label: 'Website' },
+  { value: 'facebook',     label: 'Facebook' },
+  { value: 'facebook_ads', label: 'Facebook Ads' },
+  { value: 'messenger',    label: 'Messenger' },
+  { value: 'referral',     label: 'Referral' },
+  { value: 'social_media', label: 'Social Media' },
+  { value: 'cold_call',    label: 'Cold Call' },
+  { value: 'email',        label: 'Email' },
+  { value: 'other',        label: 'Other' },
 ];
 
 const STATUSES = [

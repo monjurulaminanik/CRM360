@@ -64,6 +64,7 @@ const createProject = async (req, res, next) => {
     req.body.tenantId = req.user.tenantId;
     req.body.createdBy = req.user._id;
     if (!req.body.projectManager) req.body.projectManager = req.user._id;
+    if (!req.body.client || req.body.client === '') delete req.body.client;
 
     console.log('Project creation body:', req.body);
     const project = await Project.create(req.body);
