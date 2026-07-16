@@ -6,9 +6,11 @@ const {
   getLeadNotes, addLeadNote,
 } = require('../controllers/leadController');
 const { protect, authorize } = require('../middleware/auth');
+const ensureUserTenant = require('../middleware/ensureTenant');
 const validate = require('../middleware/validate');
 
 router.use(protect);
+router.use(ensureUserTenant);
 
 const createLeadValidation = [
   body('name').notEmpty().withMessage('Lead name is required'),

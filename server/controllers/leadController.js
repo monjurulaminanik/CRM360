@@ -63,6 +63,12 @@ const getLead = async (req, res, next) => {
 // @route   POST /api/leads
 const createLead = async (req, res, next) => {
   try {
+    if (!req.user.tenantId) {
+      return res.status(400).json({
+        success: false,
+        message: 'No tenant linked to your account. Run: node scripts/seedAdmin.js',
+      });
+    }
     req.body.createdBy = req.user._id;
     req.body.tenantId = req.user.tenantId;
     const lead = await Lead.create(req.body);
