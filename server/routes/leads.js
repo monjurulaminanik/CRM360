@@ -15,7 +15,7 @@ router.use(ensureUserTenant);
 const createLeadValidation = [
   body('name').notEmpty().withMessage('Lead name is required'),
   body('email').optional().isEmail().withMessage('Valid email required'),
-  body('phone').optional().isMobilePhone().withMessage('Valid phone required'),
+  body('phone').optional({ checkFalsy: true }).isString().withMessage('Valid phone required'),
 ];
 
 router.get('/stats', getLeadStats);

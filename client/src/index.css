@@ -46,11 +46,20 @@
 
   /* ── Layout helpers ── */
   .page-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+    @apply max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6;
   }
 
   .section-header {
-    @apply flex items-center justify-between mb-6;
+    @apply flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6;
+  }
+
+  /* Mobile-friendly tables */
+  .table-scroll {
+    @apply w-full overflow-x-auto -mx-1 px-1;
+  }
+
+  .table-scroll table {
+    @apply min-w-[640px] w-full;
   }
 
   .divider {

@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { useLanguageStore } from '../../store/languageStore';
 
-export default function Sidebar({ collapsed, setCollapsed, user, counts = {} }) {
+export default function Sidebar({ collapsed, setCollapsed, user, counts = {}, onNavigate }) {
   const navigate = useNavigate();
   const { t } = useLanguageStore();
 
@@ -14,6 +14,10 @@ export default function Sidebar({ collapsed, setCollapsed, user, counts = {} }) 
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     navigate('/login');
+  };
+
+  const handleNav = () => {
+    if (typeof onNavigate === 'function') onNavigate();
   };
 
   const adminMenuItems = [
@@ -60,7 +64,7 @@ export default function Sidebar({ collapsed, setCollapsed, user, counts = {} }) 
     <aside
       className={`${
         collapsed ? 'w-[70px]' : 'w-[260px]'
-      } fixed lg:sticky top-0 left-0 h-screen bg-white border-r border-gray-200 flex flex-col transition-all duration-300 z-30`}
+      } h-screen bg-white border-r border-gray-200 flex flex-col transition-all duration-300`}
     >
       {/* Logo + Collapse Toggle */}
       <div className={`h-16 flex items-center ${collapsed ? 'justify-center' : 'justify-between px-5'} border-b border-gray-100 flex-shrink-0`}>
@@ -111,6 +115,7 @@ export default function Sidebar({ collapsed, setCollapsed, user, counts = {} }) 
               <NavLink
                 to={item.to}
                 end={item.to === '/'}
+                onClick={handleNav}
                 className={({ isActive }) =>
                   `relative flex items-center gap-3 ${
                     collapsed ? 'justify-center px-2' : 'px-3'

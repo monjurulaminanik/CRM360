@@ -13,10 +13,13 @@ import Button from '../components/ui/Button';
 import EmptyState from '../components/ui/EmptyState';
 
 const STATUSES = ['new', 'contacted', 'qualified', 'proposal', 'negotiation', 'won', 'lost'];
-const SOURCES  = ['website', 'whatsapp', 'referral', 'social_media', 'cold_call', 'email', 'other'];
+const SOURCES  = ['website', 'whatsapp', 'facebook', 'facebook_ads', 'messenger', 'referral', 'social_media', 'cold_call', 'email', 'other'];
 const SOURCE_LABELS = {
   website:      'Website',
   whatsapp:     'WhatsApp',
+  facebook:     'Facebook',
+  facebook_ads: 'FB Ads',
+  messenger:    'Messenger',
   referral:     'Referral',
   social_media: 'Social Media',
   cold_call:    'Cold Call',
@@ -378,24 +381,26 @@ export default function LeadsPage() {
           />
         </div>
       ) : view === 'table' ? (
-        <LeadTable
-          leads={leads}
-          loading={isLoading}
-          selected={selected}
-          onSelect={handleSelect}
-          onSelectAll={handleSelectAll}
-          onStatusChange={handleStatusChange}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-          onConvert={(lead) => {
-            if (window.confirm(`Are you sure you want to convert "${lead.name}" to an active client?`)) {
-              convertMutation.mutate(lead._id);
-            }
-          }}
-          sortBy={sortBy}
-          sortDir={sortDir}
-          onSort={handleSort}
-        />
+        <div className="table-scroll rounded-xl border border-gray-100 bg-white">
+          <LeadTable
+            leads={leads}
+            loading={isLoading}
+            selected={selected}
+            onSelect={handleSelect}
+            onSelectAll={handleSelectAll}
+            onStatusChange={handleStatusChange}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+            onConvert={(lead) => {
+              if (window.confirm(`Are you sure you want to convert "${lead.name}" to an active client?`)) {
+                convertMutation.mutate(lead._id);
+              }
+            }}
+            sortBy={sortBy}
+            sortDir={sortDir}
+            onSort={handleSort}
+          />
+        </div>
       ) : (
         <LeadKanban leads={leads} onStatusChange={handleStatusChange} />
       )}
